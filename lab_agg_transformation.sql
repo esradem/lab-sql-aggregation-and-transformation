@@ -10,11 +10,10 @@ FROM film;
 -- Hint: Look for floor and round functions.
  
 SELECT 
-  CONCAT(
-    FLOOR(AVG(length) / 60), 'h ',
-    FLOOR(AVG(length)) MOD 60, 'm'
-  ) AS avg_duration_formatted
+  FLOOR(AVG(length) / 60) AS hours, 
+  ROUND(AVG(length) % 60) AS minutes
 FROM film;
+
 -- You need to gain insights related to rental dates:
 
 -- 2.1 Calculate the number of days that the company has been operating.
